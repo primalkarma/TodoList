@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct TodoListApp: App {
     var body: some Scene {
         WindowGroup {
             TodoListView()
+                .modelContainer(for: ToDo.self)
         }
+    }
+    init() {
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }
